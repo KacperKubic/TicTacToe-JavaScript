@@ -1,0 +1,422 @@
+*
+{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body 
+{
+    font-family: 'Patrick Hand', cursive;
+    text-align: center;
+    background-color: #37505C;
+}
+
+
+#title
+{
+    height: 30vh;
+    padding: 5vh;
+    background-color: #37505C;
+    color: orange;
+}
+
+#title h1
+{
+    font-size: 4rem;
+}
+
+#title h4
+{
+    font-size: 1.25rem;
+    padding-bottom: 10px;
+}
+
+#title hr
+{
+    width: 80vw;
+    height: 4px;
+    margin-top: 4vh;
+    margin: auto;
+    border: none;
+    background: -webkit-linear-gradient(to left, red, orange, orange, red 800px);
+    background: linear-gradient(to left, red, orange, orange, red 800px);
+    
+}
+
+#game
+{
+    max-width: 100%;
+    max-height: 70%;
+    padding-top: 50px;
+    padding-bottom: 30vh;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: #37505C;
+    color: orange;
+}
+
+#game h1
+{
+    font-size: 3rem;
+    padding: 30px;
+}
+
+#board
+{
+    width: 450px;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 40px;
+}
+
+.tile
+{
+    height: 150px;
+    width: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: orange;
+    font-size: 120px;
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+}
+
+.tile:nth-child(3n)  
+{
+    border-right: none;
+}
+
+.tile:nth-child(6) ~ .tile
+{
+    border-bottom: none;
+}
+
+#reset
+{
+    padding: 15px 15px;
+    border-radius: 10px;
+    background-color: orange;
+    color: #333;
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'Patrick Hand', cursive;
+}
+
+#reset:hover
+{
+    background-color: rgb(187, 132, 31);
+}
+
+.winningTile
+{
+    background-color: #425761; 
+}
+
+.win
+{
+   background-color: #60727c;
+}
+
+.noclick
+{
+    pointer-events: none;
+}
+
+
+@media all and (max-width: 550px)
+{
+    #title h1
+    {
+        font-size: 3.1rem;
+    }
+
+    #title h4
+    {
+        font-size: 1.2rem;
+        padding-bottom: 10px;
+    }
+
+    #game h1
+    {
+        font-size: 2.5rem;
+        padding: 30px;
+    }
+
+    #board
+    {
+        width: 300px;
+   
+    }
+    .tile
+    {
+        height: 100px;
+        width: 100px;
+        font-size: 80px
+    
+    }
+}
+
+@media all and (max-width: 450px)
+{
+    #title
+    {
+        padding-bottom: 0px;
+        height: 20vh;
+    }
+
+    #game
+    {
+        height: 80vh;
+    }
+ 
+    #title h1
+    {
+        font-size: 2.2rem;
+    }
+
+    #title h4
+    {
+        font-size: 0.9rem;
+        padding-bottom: 10px;
+    }
+
+    #tile hr
+    {
+        visibility: none;
+    }
+
+    #game h1
+    {
+    font-size: 1.5rem;
+    padding-top: 0px;
+    padding-right: 30px;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    }
+}
+
+
+
+@media all and (max-width: 400px)
+{
+    #title
+    {
+        padding-bottom: 0px;
+        height: 10vh;
+    }
+
+    #game
+    {
+        height: 90vh;
+    }
+ 
+    #title h1
+    {
+        font-size: 2rem;
+    }
+
+    #title h4
+    {
+        display: none;
+    }
+
+    #game h1
+    {
+    font-size: 1.8rem;
+    }
+
+    #board
+    {
+        width: 270px;
+    }
+
+    .tile
+    {
+        height: 90px;
+        width: 90px;
+        font-size: 70px;
+    }
+}
+
+@media all and (max-width: 300px)
+{
+    #title h1
+    {
+        font-size: 1.5rem;
+    }
+
+    #game h1
+    {
+    font-size: 1.3rem;
+    }
+
+    #board
+    {
+        width: 240px;
+    }
+
+    .tile
+    {
+        height: 80px;
+        width: 80px;
+        font-size: 60px;
+    }
+}
+
+@media all and (max-height: 920px)
+{
+    #game h1
+    {
+        font-size: 2rem;
+        padding-top: 0px;
+        padding-right: 30px;
+        padding-left: 30px;
+        padding-bottom: 30px;
+    }
+
+    #board
+    {
+        width: 300px;
+    }
+
+    .tile
+    {
+        font-size: 80px;
+        height: 100px;
+        width: 100px;
+    }
+}
+
+
+@media all and (max-height: 750px)
+{
+    #title
+    {
+        padding-bottom: 0px;
+        height: 20vh;
+    }
+    
+    #title h1
+    {
+        font-size: 2rem;
+    }
+
+    #title h4
+    {
+        font-size: 1.2rem;
+    }
+    
+    #game
+    {
+        height: 80vh;
+        padding-top: 0px;
+        padding-bottom: 5vh;
+    }
+    #game h1
+    {
+        font-size: 1.9rem;
+        font: bold;
+    
+    }
+
+    #board
+    {
+        width: 300px;
+    }
+
+    .tile
+    {
+        font-size: 80px;
+        height: 100px;
+        width: 100px;
+    }
+}
+
+@media all and (max-height: 600px)
+{
+    #title
+    {
+        padding-top: 10px;
+        padding-bottom: 0px;
+        height: 10vh;
+    }
+    
+    #title h1
+    {
+        font-size: 3rem;
+        letter-spacing: 0.10px;
+    }
+
+    #title h4
+    {
+        display: none;
+    }
+    
+    #game
+    {
+        height: 90vh;
+        padding-top: 20px;
+        padding-bottom: 2vh;
+    }
+
+    #game h1
+    {
+        font-size: 1.9rem;
+        font: bold;
+    
+    }
+
+    #board
+    {
+        width: 240px;
+    }
+
+    .tile
+    {
+        font-size: 60px;
+        height: 80px;
+        width: 80px;
+    }
+}
+
+@media all and (max-height: 500px)
+{
+    #title
+    {
+        padding-top: 0px;
+        font-size: 2.5rem;
+
+    }
+
+    #game
+    {
+        padding-top: 0px;
+    }
+    
+    #game h1
+    {
+        padding-bottom: 5px;
+    }
+}
+
+
+@media all and (max-height: 500px)
+
+{
+    #board
+    {
+        width: 210px;
+    }
+
+    .tile
+    {
+        font-size: 50px;
+        height: 70px;
+        width: 70px;
+    }
+}
