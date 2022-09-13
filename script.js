@@ -21,103 +21,76 @@ const winningConditions = [
 window.addEventListener('load', startGame);
 reset.addEventListener('click', resetGame);
 
-
-function startGame() 
-{
+function startGame() {
     tiles.forEach(tile => tile.addEventListener('click', tileClicked));
 }
 
-
-function tileClicked(e)
-{
+function tileClicked(e){
     const id = e.target.id;
 
-    if(!board[id])
-    {   
+    if(!board[id]){   
         board[id] = currentPlayer;
         
-        if(currentPlayer == doggo)
-        {
+        //Puts different symbol inside clicked tile depending of current player
+        if(currentPlayer == doggo){
             dogIcon = document.createElement('i');
             dogIcon.classList.add('fa-solid', 'fa-dog');
             e.target.appendChild(dogIcon);
-
-        }
-
-        else
-        {
+        }else{
             catIcon = document.createElement('i');
             catIcon.classList.add('fa-solid', 'fa-cat');
             e.target.appendChild(catIcon);
         }
         
-
-        if(endOfGame() !==false)
-        {
+        //Changing the game state
+        if(endOfGame() !==false){       //If EOG function returns anything else then false display win massage and block clicking on tiles
             current_state.innerHTML = currentPlayer + ' has won!';
             let winner = endOfGame();
             
             winner.map(tile => tiles[tile].classList.add('win'));
             tiles.forEach(tile => {tile.classList.add('noclick')});;
-
         }
-
-        else
-        {
-            if(i==8)
-            {    
+        
+        //If the endOfGame is equal to false do this
+        else{
+            //If there were 9 rounds without a winner set the game
+            if(i==8){    
              tiles.forEach(tile => {tile.classList.add('noclick')});
              current_state.innerHTML = 'Draw';
             }
-
-            else
-            {
+            //Change the current player every round and increase i variable by 1
+            else{
                 i++
-                if (currentPlayer == doggo)
-                {
+                if (currentPlayer == doggo){
                 currentPlayer = catto;
                 current_state.innerHTML = "Kitten's round";
-                }
-
-                else
-                {
+                }else{
                 currentPlayer = doggo;
                 current_state.innerHTML = "Puppy's round";
-                 }
+                }
             }
-        
         }
-
     }
 }
 
-function endOfGame()
-{
-    for(const condition of winningConditions)
-    {
+//Function that check if one of the winning condition is met
+function endOfGame(){
+    for(const condition of winningConditions){
         let [a, b, c] = condition;
 
-        if(board[a] &&(board[a] == board[b] && board[a] == board[c]))
-        {
+        if(board[a] &&(board[a] == board[b] && board[a] == board[c])){
             return [a,b,c];
         }
     }
-
-    
     return false;
 }
 
-function resetGame()
-{
+//Reset the game to it beggining state
+function resetGame(){
     board.fill(null);
-
     tiles.forEach(tile => {tile.innerText= ''});
-
     tiles.forEach(tile => {tile.classList.remove('win', 'noclick')});
-
     current_state.innerHTML = 'Start the game';
-
     i = 0;
-
     currentPlayer = doggo;
 }
